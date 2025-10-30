@@ -44,6 +44,7 @@ Additionally, the system detects no-traffic conditions and triggers a blinking y
 | Python 3.x | AI logic |
 | OpenCV | Vehicle detection |
 | NumPy | Frame processing |
+| MobileNetSSD | Object Detection Model |
 | PySerial | Communication with ESP32 |
 | Arduino IDE | Flashing ESP32 code |
 
@@ -62,18 +63,3 @@ pip install opencv-python numpy pyserial
 
 ---
 
-## 🧠 Model Details
-
-- **Model Used:** MobileNetSSD (Caffe model)
-- **Classes:** Car, Bus, Bicycle, Motorbike, Truck
-- **Confidence Threshold:** 0.5  
-- **Input Size:** 300×300
-
-You can download `MobileNetSSD_deploy.prototxt` and `MobileNetSSD_deploy.caffemodel` from the OpenCV model zoo.
-
----
-
-## 🏁 Conclusion
-
-This project showcases the real-world integration of **AI and IoT** for solving urban traffic challenges.  
-By combining live vehicle detection with dynamic traffic control, it significantly reduces waiting time and enhances traffic efficiency.
