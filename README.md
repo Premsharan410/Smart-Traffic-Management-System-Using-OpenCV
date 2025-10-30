@@ -48,10 +48,13 @@ Additionally, the system detects no-traffic conditions and triggers a blinking y
 | PySerial | Communication with ESP32 |
 | Arduino IDE | Flashing ESP32 code |
 
+---
+
 ### Install Dependencies
 ```bash
 pip install opencv-python numpy pyserial
 ```
+---
 
 ## 🧠 Working Principle
 
