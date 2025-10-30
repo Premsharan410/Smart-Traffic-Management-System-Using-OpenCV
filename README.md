@@ -73,12 +73,6 @@ You can download `MobileNetSSD_deploy.prototxt` and `MobileNetSSD_deploy.caffemo
 
 ---
 
-## 📽️ Demo 
-  
-👉 [Watch Demo](https://www.linkedin.com/posts/tejas-mistry-494621283_smarttraffic-iot-opencv-ugcPost-7333427598384852992-OQQ_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFBow7kBuzDkNY6wDhOYS1KkyxssnzJL2dc)
-
----
-
 ## 🏁 Conclusion
 
 This project showcases the real-world integration of **AI and IoT** for solving urban traffic challenges.  
