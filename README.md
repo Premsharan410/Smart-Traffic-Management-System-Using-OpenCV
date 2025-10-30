@@ -37,19 +37,6 @@ Additionally, the system detects no-traffic conditions and triggers a blinking y
 
 ---
 
-## 🧩 Hardware Components
-
-| Component | Description |
-|------------|-------------|
-| ESP32 | Controls traffic lights |
-| 6 LEDs (2 sets of R/Y/G) | Represent two-lane signals |
-| Jumper Wires | Circuit connections |
-| Breadboard | Hardware setup |
-| Android Phone (IP Webcam) | Camera source |
-| Laptop | Runs Python detection logic |
-
----
-
 ## 💻 Software Requirements
 
 | Software | Purpose |
@@ -65,66 +52,13 @@ Additionally, the system detects no-traffic conditions and triggers a blinking y
 pip install opencv-python numpy pyserial
 ```
 
----
-
 ## 🧠 Working Principle
 
 1. Two camera feeds are captured via IP Webcam URLs.  
-2. `Car Detection and Logic.py` detects and counts vehicles using **MobileNetSSD**.  
+2. `Car Detection and Logic.py` detects video using **OpenCV** and counts vehicles using **MobileNetSSD**.  
 3. Based on density, Python decides which lane gets green.  
-4. Commands (`L1_5`, `L2_8`, `NO`) are sent to ESP32 over serial.  
+4. Commands (`L1_5`, `L2_8`, `NO`) are sent to ESP32 over serial using PySerial
 5. The **ESP32 Code.ino** script interprets these commands and lights up corresponding LEDs.  
-
----
-
-## 🧾 Code Structure
-
-```
-SmartTraffic/
-│
-├── Car Detection and Logic.py      # AI + logic + serial communication
-├── ESP32 Code.ino                  # ESP32 traffic light control
-├── requirements.txt                # Python dependencies
-└── README.md                       # Documentation
-```
-
----
-
-## 🔌 Serial Communication Protocol
-
-| Command | Meaning |
-|----------|----------|
-| `L1_5` | Lane 1 → Green for 5 seconds |
-| `L2_8` | Lane 2 → Green for 8 seconds |
-| `NO`   | No vehicles → Blinking yellow |
-
-ESP32 listens on **9600 baud rate** and switches signals accordingly.
-
----
-
-## 🧩 ESP32 Pin Configuration Example
-
-| Light | GPIO Pin |
-|--------|-----------|
-| Lane 1 Red | 25 |
-| Lane 1 Yellow | 26 |
-| Lane 1 Green | 27 |
-| Lane 2 Red | 14 |
-| Lane 2 Yellow | 12 |
-| Lane 2 Green | 13 |
-
-*(You can change pin numbers in the `.ino` file as needed.)*
-
----
-
-## 🧪 Example Output
-
-```
-Switch → Lane 2 GREEN for 8s
-Sent L2_8 to ESP
-No vehicles detected → Blinking YELLOW
-Sent NO to ESP
-```
 
 ---
 
@@ -139,30 +73,9 @@ You can download `MobileNetSSD_deploy.prototxt` and `MobileNetSSD_deploy.caffemo
 
 ---
 
-## 🚀 Future Improvements
-
-- Add **ambulance detection** for emergency lane priority  
-- Add **Flask web dashboard** for live monitoring  
-- Integrate **cloud-based data logging**  
-- Use **YOLOv8** for more accurate detection  
-- Expand to **4-lane control** and synchronization across junctions  
-
----
-
-## 🧑‍💻 Contributors
-
-| Name | Role |
-|------|------|
-| **Prem Patel** | AI & Software Integration |
-| **[Teammate 1]** | Hardware & ESP32 Logic |
-| **[Teammate 2]** | Testing & Visualization |
-
----
-
-## 📽️ Demo (Optional)
-
-Add your demo video link below once uploaded:  
-👉 [Watch Demo on YouTube](#)
+## 📽️ Demo 
+  
+👉 [Watch Demo](https://www.linkedin.com/posts/tejas-mistry-494621283_smarttraffic-iot-opencv-ugcPost-7333427598384852992-OQQ_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFBow7kBuzDkNY6wDhOYS1KkyxssnzJL2dc)
 
 ---
 
@@ -170,9 +83,3 @@ Add your demo video link below once uploaded:
 
 This project showcases the real-world integration of **AI and IoT** for solving urban traffic challenges.  
 By combining live vehicle detection with dynamic traffic control, it significantly reduces waiting time and enhances traffic efficiency.
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License** — feel free to modify and expand.
